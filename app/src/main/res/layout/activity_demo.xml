@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#fff"
+              android:divider="@drawable/divider"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:showDividers="middle"
+              android:dividerPadding="10dp"
+    >
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="哈哈哈哈哈"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#000000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:drawableLeft="@drawable/ic_info"
+        android:drawablePadding="15dp"
+        android:drawableRight="@drawable/arrow"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="公告通知"
+        android:textColor="#89000000"
+        android:textSize="12sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/nongye"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="8dp"
+            android:paddingLeft="20dp"
+            android:text="银行名字:  农业银行\n持卡类型:  储蓄卡\n营业时间:  09:00 - 17:00\n银行地址:  余杭区崇仁路"
+            android:textColor="#89000000"
+            android:textSize="12sp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_combine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:text="哈哈哈"
+        android:textSize="26sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

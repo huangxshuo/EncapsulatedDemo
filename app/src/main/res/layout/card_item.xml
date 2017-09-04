@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bank"
+            type="com.miracle.encapsulateddemo.bean.Bank"/>
+        <variable
+            name="clicker"
+            type="android.view.View.OnClickListener"/>
+
+    </data>
+
+    <RelativeLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            app:imageResource="@{bank.getDrawableRes()}"
+            />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/icon"
+            android:text="@{bank.bankName}"
+            android:textColor="#89000000"
+            android:textSize="16sp"
+            />
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="广发"
+            android:gravity="center"
+            android:onClick="@{clicker.onClick}"
+            android:layout_above="@+id/btn_1"
+            />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="农行"
+            android:gravity="center"
+            android:onClick="@{clicker.onClick}"
+            android:layout_above="@+id/btn"
+            />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:text="中行"
+            android:gravity="center"
+            android:onClick="@{clicker.onClick}"
+            />
+
+    </RelativeLayout>
+</layout>
