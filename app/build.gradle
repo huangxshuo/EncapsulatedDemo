@@ -52,9 +52,9 @@ android {
                 File outputDirectory = new File(outputFile.parent);
                 def fileName
                 if (variant.buildType.name == "release") {
-                    fileName = "app-v${defaultConfig.versionName}-${variant.productFlavors[0].name}-release.apk"
+                    fileName = "app-v${defaultConfig.versionName}-${variant.productFlavors[0].name}-${generateTime()}-release.apk"
                 } else {
-                    fileName = "app-v${defaultConfig.versionName}-debug.apk"
+                    fileName = "app-v${defaultConfig.versionName}-${generateTime()}-debug.apk"
                 }
                 output.outputFile = new File(outputDirectory, fileName)
             }
@@ -80,4 +80,8 @@ android {
         compile 'com.android.support:support-v4:25.0.0'
         compile 'com.android.support:appcompat-v7:25.0.0'
     }
+}
+
+def generateTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
