@@ -8,7 +8,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,29 +16,54 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+
+
+        }
     }
 
     dataBinding {
         enabled = true;
     }
-}
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
-    compile 'com.squareup.okio:okio:1.5.0'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.facebook.fresco:fresco:1.2.0'
-    compile 'com.facebook.fresco:webpsupport:1.2.0'
-    compile 'com.facebook.fresco:animated-base-support:1.2.0'
-    compile 'com.facebook.fresco:animated-webp:1.2.0'
-    compile 'com.google.code.gson:gson:2.8.1'
-    compile 'org.zackratos:ultimatebar:1.0.3'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:recyclerview-v7:25.0.0'
-    compile 'com.android.support:support-v4:25.0.0'
-    compile 'com.android.support:appcompat-v7:25.0.0'
+    productFlavors {
+
+        uc {}
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                File outputDirectory = new File(outputFile.parent);
+                def fileName
+                if (variant.buildType.name == "release") {
+                    fileName = "app-v${defaultConfig.versionName}-${variant.productFlavors[0].name}-release.apk"
+                } else {
+                    fileName = "app-v${defaultConfig.versionName}-debug.apk"
+                }
+                output.outputFile = new File(outputDirectory, fileName)
+            }
+        }
+    }
+
+    dependencies {
+        compile fileTree(include: ['*.jar'], dir: 'libs')
+        androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+        compile 'com.squareup.okhttp:okhttp:2.4.0'
+        compile 'com.squareup.okio:okio:1.5.0'
+        compile 'com.github.bumptech.glide:glide:3.7.0'
+        compile 'com.facebook.fresco:fresco:1.2.0'
+        compile 'com.facebook.fresco:webpsupport:1.2.0'
+        compile 'com.facebook.fresco:animated-base-support:1.2.0'
+        compile 'com.facebook.fresco:animated-webp:1.2.0'
+        compile 'com.google.code.gson:gson:2.8.1'
+        compile 'org.zackratos:ultimatebar:1.0.3'
+        testCompile 'junit:junit:4.12'
+        compile 'com.android.support:recyclerview-v7:25.0.0'
+        compile 'com.android.support:support-v4:25.0.0'
+        compile 'com.android.support:appcompat-v7:25.0.0'
+    }
 }
