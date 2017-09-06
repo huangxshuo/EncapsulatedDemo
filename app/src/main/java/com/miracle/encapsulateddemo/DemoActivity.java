@@ -43,7 +43,9 @@ public class DemoActivity extends Activity {
 		spanna.setSpan(new AbsoluteSizeSpan(dipToPx(this, 14)), i, format.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		tv_combine.setText(spanna);
 
-		setRecycleView();
+		//setRecycleView();
+		TextView tv_version = (TextView) findViewById(R.id.tv_version);
+		tv_version.setText(BuildConfig.VERSION_NAME);
 
 	}
 

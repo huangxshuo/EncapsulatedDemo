@@ -9,6 +9,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0.0"
+        versionName APP_VERSION
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -29,6 +30,8 @@ android {
     productFlavors {
 
         uc {}
+        wandoujia{}
+        qq{}
     }
 
     applicationVariants.all { variant ->
