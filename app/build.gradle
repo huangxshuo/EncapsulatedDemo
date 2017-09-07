@@ -52,7 +52,7 @@ android {
                 File outputDirectory = new File(outputFile.parent);
                 def fileName
                 if (variant.buildType.name == "release") {
-                    fileName = "app-v${defaultConfig.versionName}-${variant.productFlavors[0].name}-${generateTime()}-release.apk"
+                    fileName = "app-v${defaultConfig.versionName}-${variant.productFlavors[0].name}-release.apk"
                 } else {
                     fileName = "app-v${defaultConfig.versionName}-${generateTime()}-debug.apk"
                 }
