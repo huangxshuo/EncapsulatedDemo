@@ -46,7 +46,7 @@
             android:layout_height="40dp"
             android:text="广发"
             android:gravity="center"
-            android:onClick="@{clicker.onClick}"
+            android:onClick="@{clicker::onClick}"
             android:layout_above="@+id/btn_1"
             />
 
@@ -56,7 +56,7 @@
             android:layout_height="40dp"
             android:text="农行"
             android:gravity="center"
-            android:onClick="@{clicker.onClick}"
+            android:onClick="@{clicker::onClick}"
             android:layout_above="@+id/btn"
             />
 
@@ -67,7 +67,7 @@
             android:layout_alignParentBottom="true"
             android:text="中行"
             android:gravity="center"
-            android:onClick="@{clicker.onClick}"
+            android:onClick="@{clicker::onClick}"
             />
 
     </RelativeLayout>
